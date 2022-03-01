@@ -22,7 +22,7 @@ pipeline {
         stage('Build docker image') {
            steps {
                script {         
-                 def customImage = docker.build('yvelio/petclinic', "./docker")
+                 def customImage = docker.build('yvelio/cloudfreak', "./docker")
                  docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
                  customImage.push("${env.BUILD_NUMBER}")
                  }                     
